@@ -1,17 +1,19 @@
-- hosts: all
+- name: Install miniconda and dash services
+  hosts: dask
+  gather_facts: no
   roles:
     - dask-miniconda
 
 - hosts: master
   tasks:
   - name: enable dscheduler
-    sudo: yes
+    become: yes
     service:
       name: dscheduler
       enabled: yes
 
 - hosts: worker
-  sudo: yes
+  become: yes
   tasks:
   - name: enable dworker
     service:
