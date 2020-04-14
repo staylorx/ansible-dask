@@ -1,15 +1,14 @@
 ansible_architecture: x86_64
 my_remote_tmp: /tmp
 miniconda_home: '~/.miniconda'
-#miniconda_home: /opt/miniconda
-miniconda_version: 'latest'
+miniconda_version: 'py37_4.8.2'
 
 python_version: 3
 
 miniconda_environments:
- - name: dask_env
-   python_version: 3.7
-   pkgs: 'dask[complete] distributed s3fs pandas numpy'
+  dask_env:
+    python_version: 3.7
+    pkgs: 'dask[complete] distributed s3fs pandas numpy'
 
 miniconda_installer:
   url: 'http://repo.continuum.io/miniconda'

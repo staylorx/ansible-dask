@@ -1,6 +1,8 @@
 - name: Install miniconda and dash services
   hosts: dask
   gather_facts: no
+  vars:
+    miniconda_version: py37_4.8.2
   roles:
     - dask-miniconda
 
